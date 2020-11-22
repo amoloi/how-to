@@ -1,0 +1,546 @@
+Installing REMI repo
+
+[root@localhost iamolo]# dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+Last metadata expiration check: 0:02:16 ago on Sun 22 Nov 2020 03:37:12 PM CAT.
+epel-release-latest-8.noarch.rpm                                                                                                                                                   6.0 kB/s |  22 kB     00:03    
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                              Architecture                                   Version                                            Repository                                            Size
+===================================================================================================================================================================================================================
+Installing:
+ epel-release                                         noarch                                         8-9.el8                                            @commandline                                          22 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total size: 22 k
+Installed size: 32 k
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : epel-release-8-9.el8.noarch                                                                                                                                                               1/1 
+  Running scriptlet: epel-release-8-9.el8.noarch                                                                                                                                                               1/1 
+  Verifying        : epel-release-8-9.el8.noarch                                                                                                                                                               1/1 
+Installed products updated.
+
+Installed:
+  epel-release-8-9.el8.noarch                                                                                                                                                                                      
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]# dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+Extra Packages for Enterprise Linux Modular 8 - x86_64                                                                                                                             7.9 kB/s |  98 kB     00:12    
+Extra Packages for Enterprise Linux 8 - x86_64                                                                                                                                     178 kB/s | 8.4 MB     00:48    
+Last metadata expiration check: 0:00:01 ago on Sun 22 Nov 2020 03:41:53 PM CAT.
+remi-release-8.rpm                                                                                                                                                                 2.7 kB/s |  23 kB     00:08    
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                             Architecture                                  Version                                               Repository                                           Size
+===================================================================================================================================================================================================================
+Installing:
+ remi-release                                        noarch                                        8.1-2.el8.remi                                        @commandline                                         23 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total size: 23 k
+Installed size: 17 k
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : remi-release-8.1-2.el8.remi.noarch                                                                                                                                                        1/1 
+  Verifying        : remi-release-8.1-2.el8.remi.noarch                                                                                                                                                        1/1 
+Installed products updated.
+
+Installed:
+  remi-release-8.1-2.el8.remi.noarch                                                                                                                                                                               
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]# dnf -y install yum-utils
+Remi's Modular repository for Enterprise Linux 8 - x86_64                                                                                                                           49 kB/s | 730 kB     00:14    
+Safe Remi's RPM repository for Enterprise Linux 8 - x86_64                                                                                                                         138 kB/s | 1.6 MB     00:11    
+Last metadata expiration check: 0:00:02 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                            Architecture                                    Version                                                  Repository                                       Size
+===================================================================================================================================================================================================================
+Installing:
+ yum-utils                                          noarch                                          4.0.12-4.el8_2                                           BaseOS                                           66 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 66 k
+Installed size: 20 k
+Downloading Packages:
+yum-utils-4.0.12-4.el8_2.noarch.rpm                                                                                                                                                 25 kB/s |  66 kB     00:02    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               16 kB/s |  66 kB     00:04     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : yum-utils-4.0.12-4.el8_2.noarch                                                                                                                                                           1/1 
+  Running scriptlet: yum-utils-4.0.12-4.el8_2.noarch                                                                                                                                                           1/1 
+  Verifying        : yum-utils-4.0.12-4.el8_2.noarch                                                                                                                                                           1/1 
+Installed products updated.
+
+Installed:
+  yum-utils-4.0.12-4.el8_2.noarch                                                                                                                                                                                  
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Reset the default PHP module
+
+[root@localhost iamolo]# dnf module reset php
+Last metadata expiration check: 0:00:50 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+Installing remi php8 module
+
+[root@localhost iamolo]# dnf module install php:remi-8.0 -y
+Last metadata expiration check: 0:01:35 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                          Architecture                           Version                                                                Repository                                    Size
+===================================================================================================================================================================================================================
+Installing group/module packages:
+ php-cli                                          x86_64                                 8.0.0~rc5-9.el8.remi                                                   remi-modular                                 4.7 M
+ php-common                                       x86_64                                 8.0.0~rc5-9.el8.remi                                                   remi-modular                                 1.2 M
+ php-fpm                                          x86_64                                 8.0.0~rc5-9.el8.remi                                                   remi-modular                                 1.6 M
+ php-mbstring                                     x86_64                                 8.0.0~rc5-9.el8.remi                                                   remi-modular                                 520 k
+ php-xml                                          x86_64                                 8.0.0~rc5-9.el8.remi                                                   remi-modular                                 235 k
+Installing dependencies:
+ httpd-filesystem                                 noarch                                 2.4.37-21.module_el8.2.0+494+1df74eae                                  AppStream                                     36 k
+ oniguruma5php                                    x86_64                                 6.9.6-1.el8.remi                                                       remi-safe                                    208 k
+Installing weak dependencies:
+ nginx-filesystem                                 noarch                                 1:1.14.1-9.module_el8.0.0+184+e34fea82                                 AppStream                                     24 k
+Installing module profiles:
+ php/common                                                                                                                                                                                                       
+Enabling module streams:
+ httpd                                                                                   2.4                                                                                                                      
+ nginx                                                                                   1.14                                                                                                                     
+ php                                                                                     remi-8.0                                                                                                                 
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  8 Packages
+
+Total download size: 8.6 M
+Installed size: 43 M
+Downloading Packages:
+(1/8): httpd-filesystem-2.4.37-21.module_el8.2.0+494+1df74eae.noarch.rpm                                                                                                           3.2 kB/s |  36 kB     00:11    
+(2/8): nginx-filesystem-1.14.1-9.module_el8.0.0+184+e34fea82.noarch.rpm                                                                                                            2.2 kB/s |  24 kB     00:11    
+(3/8): php-cli-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                     122 kB/s | 4.7 MB     00:39    
+(4/8): php-common-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                   43 kB/s | 1.2 MB     00:29    
+(5/8): php-fpm-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                      56 kB/s | 1.6 MB     00:29    
+(6/8): php-xml-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                      25 kB/s | 235 kB     00:09    
+(7/8): oniguruma5php-6.9.6-1.el8.remi.x86_64.rpm                                                                                                                                    22 kB/s | 208 kB     00:09    
+(8/8): php-mbstring-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                 31 kB/s | 520 kB     00:16    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                              125 kB/s | 8.6 MB     01:10     
+warning: /var/cache/dnf/remi-modular-6408ecca79e22107/packages/php-cli-8.0.0~rc5-9.el8.remi.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID 5f11735a: NOKEY
+Remi's Modular repository for Enterprise Linux 8 - x86_64                                                                                                                          3.0 MB/s | 3.1 kB     00:00    
+Importing GPG key 0x5F11735A:
+ Userid     : "Remi's RPM repository <remi@remirepo.net>"
+ Fingerprint: 6B38 FEA7 231F 87F5 2B9C A9D8 5550 9759 5F11 735A
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-remi.el8
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Running scriptlet: php-common-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                    1/8 
+  Installing       : php-common-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                    1/8 
+  Installing       : oniguruma5php-6.9.6-1.el8.remi.x86_64                                                                                                                                                     2/8 
+  Running scriptlet: nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            3/8 
+  Installing       : nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            3/8 
+  Running scriptlet: httpd-filesystem-2.4.37-21.module_el8.2.0+494+1df74eae.noarch                                                                                                                             4/8 
+  Installing       : httpd-filesystem-2.4.37-21.module_el8.2.0+494+1df74eae.noarch                                                                                                                             4/8 
+  Installing       : php-fpm-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       5/8 
+  Running scriptlet: php-fpm-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       5/8 
+  Installing       : php-mbstring-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                  6/8 
+  Installing       : php-cli-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       7/8 
+  Installing       : php-xml-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       8/8 
+  Running scriptlet: php-xml-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       8/8 
+  Running scriptlet: php-fpm-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       8/8 
+  Verifying        : httpd-filesystem-2.4.37-21.module_el8.2.0+494+1df74eae.noarch                                                                                                                             1/8 
+  Verifying        : nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            2/8 
+  Verifying        : php-cli-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       3/8 
+  Verifying        : php-common-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                    4/8 
+  Verifying        : php-fpm-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       5/8 
+  Verifying        : php-mbstring-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                  6/8 
+  Verifying        : php-xml-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                       7/8 
+  Verifying        : oniguruma5php-6.9.6-1.el8.remi.x86_64                                                                                                                                                     8/8 
+Installed products updated.
+
+Installed:
+  httpd-filesystem-2.4.37-21.module_el8.2.0+494+1df74eae.noarch   nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch   oniguruma5php-6.9.6-1.el8.remi.x86_64      php-cli-8.0.0~rc5-9.el8.remi.x86_64  
+  php-common-8.0.0~rc5-9.el8.remi.x86_64                          php-fpm-8.0.0~rc5-9.el8.remi.x86_64                              php-mbstring-8.0.0~rc5-9.el8.remi.x86_64   php-xml-8.0.0~rc5-9.el8.remi.x86_64  
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Installing php8
+
+[root@localhost iamolo]# dnf install php -y
+Last metadata expiration check: 0:04:34 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                           Architecture                          Version                                                                 Repository                                   Size
+===================================================================================================================================================================================================================
+Installing:
+ php                                               x86_64                                8.0.0~rc5-9.el8.remi                                                    remi-modular                                1.6 M
+Installing dependencies:
+ apr                                               x86_64                                1.6.3-9.el8                                                             AppStream                                   125 k
+ apr-util                                          x86_64                                1.6.1-6.el8                                                             AppStream                                   105 k
+ centos-logos-httpd                                noarch                                80.5-2.el8                                                              BaseOS                                       24 k
+ httpd                                             x86_64                                2.4.37-21.module_el8.2.0+494+1df74eae                                   AppStream                                   1.7 M
+ httpd-tools                                       x86_64                                2.4.37-21.module_el8.2.0+494+1df74eae                                   AppStream                                   103 k
+ libsodium                                         x86_64                                1.0.18-2.el8                                                            epel                                        162 k
+ mod_http2                                         x86_64                                1.11.3-3.module_el8.2.0+486+c01050f0.1                                  AppStream                                   156 k
+Installing weak dependencies:
+ apr-util-bdb                                      x86_64                                1.6.1-6.el8                                                             AppStream                                    25 k
+ apr-util-openssl                                  x86_64                                1.6.1-6.el8                                                             AppStream                                    27 k
+ php-opcache                                       x86_64                                8.0.0~rc5-9.el8.remi                                                    remi-modular                                746 k
+ php-pdo                                           x86_64                                8.0.0~rc5-9.el8.remi                                                    remi-modular                                152 k
+ php-sodium                                        x86_64                                8.0.0~rc5-9.el8.remi                                                    remi-modular                                 92 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  13 Packages
+
+Total download size: 4.9 M
+Installed size: 14 M
+Downloading Packages:
+(1/13): apr-util-bdb-1.6.1-6.el8.x86_64.rpm                                                                                                                                         10 kB/s |  25 kB     00:02    
+(2/13): apr-util-openssl-1.6.1-6.el8.x86_64.rpm                                                                                                                                     46 kB/s |  27 kB     00:00    
+(3/13): apr-1.6.3-9.el8.x86_64.rpm                                                                                                                                                  36 kB/s | 125 kB     00:03    
+(4/13): apr-util-1.6.1-6.el8.x86_64.rpm                                                                                                                                             30 kB/s | 105 kB     00:03    
+(5/13): httpd-tools-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64.rpm                                                                                                                54 kB/s | 103 kB     00:01    
+(6/13): centos-logos-httpd-80.5-2.el8.noarch.rpm                                                                                                                                    11 kB/s |  24 kB     00:02    
+(7/13): mod_http2-1.11.3-3.module_el8.2.0+486+c01050f0.1.x86_64.rpm                                                                                                                 38 kB/s | 156 kB     00:04    
+(8/13): libsodium-1.0.18-2.el8.x86_64.rpm                                                                                                                                           55 kB/s | 162 kB     00:02    
+(9/13): httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64.rpm                                                                                                                     138 kB/s | 1.7 MB     00:12    
+(10/13): php-pdo-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                    17 kB/s | 152 kB     00:09    
+(11/13): php-opcache-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                46 kB/s | 746 kB     00:16    
+(12/13): php-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                        76 kB/s | 1.6 MB     00:20    
+(13/13): php-sodium-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                 16 kB/s |  92 kB     00:05    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                              122 kB/s | 4.9 MB     00:41     
+warning: /var/cache/dnf/epel-6519ee669354a484/packages/libsodium-1.0.18-2.el8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 2f86d6a1: NOKEY
+Extra Packages for Enterprise Linux 8 - x86_64                                                                                                                                     1.6 MB/s | 1.6 kB     00:00    
+Importing GPG key 0x2F86D6A1:
+ Userid     : "Fedora EPEL (8) <epel@fedoraproject.org>"
+ Fingerprint: 94E2 79EB 8D8F 25B2 1810 ADF1 21EA 45AB 2F86 D6A1
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : apr-1.6.3-9.el8.x86_64                                                                                                                                                                   1/13 
+  Running scriptlet: apr-1.6.3-9.el8.x86_64                                                                                                                                                                   1/13 
+  Installing       : apr-util-bdb-1.6.1-6.el8.x86_64                                                                                                                                                          2/13 
+  Installing       : apr-util-openssl-1.6.1-6.el8.x86_64                                                                                                                                                      3/13 
+  Installing       : apr-util-1.6.1-6.el8.x86_64                                                                                                                                                              4/13 
+  Running scriptlet: apr-util-1.6.1-6.el8.x86_64                                                                                                                                                              4/13 
+  Installing       : httpd-tools-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                 5/13 
+  Installing       : php-pdo-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                      6/13 
+  Installing       : php-opcache-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                  7/13 
+  Installing       : libsodium-1.0.18-2.el8.x86_64                                                                                                                                                            8/13 
+  Installing       : php-sodium-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                   9/13 
+  Installing       : centos-logos-httpd-80.5-2.el8.noarch                                                                                                                                                    10/13 
+  Installing       : mod_http2-1.11.3-3.module_el8.2.0+486+c01050f0.1.x86_64                                                                                                                                 11/13 
+  Installing       : httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                      12/13 
+  Running scriptlet: httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                      12/13 
+  Installing       : php-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                         13/13 
+  Running scriptlet: httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                      13/13 
+  Running scriptlet: php-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                         13/13 
+  Verifying        : apr-1.6.3-9.el8.x86_64                                                                                                                                                                   1/13 
+  Verifying        : apr-util-1.6.1-6.el8.x86_64                                                                                                                                                              2/13 
+  Verifying        : apr-util-bdb-1.6.1-6.el8.x86_64                                                                                                                                                          3/13 
+  Verifying        : apr-util-openssl-1.6.1-6.el8.x86_64                                                                                                                                                      4/13 
+  Verifying        : httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                       5/13 
+  Verifying        : httpd-tools-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64                                                                                                                                 6/13 
+  Verifying        : mod_http2-1.11.3-3.module_el8.2.0+486+c01050f0.1.x86_64                                                                                                                                  7/13 
+  Verifying        : centos-logos-httpd-80.5-2.el8.noarch                                                                                                                                                     8/13 
+  Verifying        : libsodium-1.0.18-2.el8.x86_64                                                                                                                                                            9/13 
+  Verifying        : php-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                         10/13 
+  Verifying        : php-opcache-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                 11/13 
+  Verifying        : php-pdo-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                     12/13 
+  Verifying        : php-sodium-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                  13/13 
+Installed products updated.
+
+Installed:
+  apr-1.6.3-9.el8.x86_64                                    apr-util-1.6.1-6.el8.x86_64                          apr-util-bdb-1.6.1-6.el8.x86_64                            apr-util-openssl-1.6.1-6.el8.x86_64  
+  centos-logos-httpd-80.5-2.el8.noarch                      httpd-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64   httpd-tools-2.4.37-21.module_el8.2.0+494+1df74eae.x86_64   libsodium-1.0.18-2.el8.x86_64        
+  mod_http2-1.11.3-3.module_el8.2.0+486+c01050f0.1.x86_64   php-8.0.0~rc5-9.el8.remi.x86_64                      php-opcache-8.0.0~rc5-9.el8.remi.x86_64                    php-pdo-8.0.0~rc5-9.el8.remi.x86_64  
+  php-sodium-8.0.0~rc5-9.el8.remi.x86_64                   
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Checking installed php version
+
+[root@localhost iamolo]# php --version
+PHP 8.0.0RC5 (cli) (built: Nov 17 2020 16:28:10) ( NTS gcc x86_64 )
+Copyright (c) The PHP Group
+Zend Engine v4.0.0-dev, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.0RC5, Copyright (c), by Zend Technologies
+    
+List installed php default modules
+
+[root@localhost iamolo]# php --modules
+[PHP Modules]
+bz2
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gettext
+hash
+iconv
+json
+libxml
+mbstring
+openssl
+pcntl
+pcre
+PDO
+pdo_sqlite
+Phar
+readline
+Reflection
+session
+SimpleXML
+sockets
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zlib
+[Zend Modules]
+Zend OPcache
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Search for a soap module, i needed this installed for my use case.
+
+[root@localhost iamolo]# dnf search soap
+Last metadata expiration check: 0:08:14 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+========================================================================================== Name & Summary Matched: soap ===========================================================================================
+CGSI-gSOAP.x86_64 : GSI plugin for gSOAP
+gsoap-doc.noarch : Documentation for gSOAP
+perl-SOAP-WSDL.noarch : Perl module for SOAP with WSDL support
+CGSI-gSOAP-devel.x86_64 : GSI plugin for gSOAP - development files
+perl-SOAP-Lite.noarch : Client and server side SOAP implementation
+perl-SOAP-WSDL-examples.noarch : Examples for the Perl SOAP::WSDL module
+php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+fence-agents-vmware-soap.noarch : Fence agent for VMWare with SOAP API v4.1+
+gsoap.x86_64 : Generator Tools for Coding SOAP/XML Web Services in C and C++
+php56-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php70-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php71-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php72-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php73-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php74-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+php80-php-soap.x86_64 : A module for PHP applications that use the SOAP protocol
+perl-SOAP-WSDL-Apache.noarch : SOAP server with WSDL support for Apache2 web server
+gsoap-devel.x86_64 : Devel libraries and headers for linking with gSOAP generated stubs
+perl-Apache2-SOAP.noarch : A replacement for Apache::SOAP designed to work with mod_perl 2
+============================================================================================== Summary Matched: soap ==============================================================================================
+python3-suds.noarch : A python SOAP client
+python3-zeep.noarch : A fast and modern Python SOAP client
+
+Get information about the desired soap module.
+
+[root@localhost iamolo]# dnf info php-soap.x86_64
+Last metadata expiration check: 0:09:04 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Available Packages
+Name         : php-soap
+Version      : 8.0.0~rc5
+Release      : 9.el8.remi
+Architecture : x86_64
+Size         : 224 k
+Source       : php-8.0.0~rc5-9.el8.remi.src.rpm
+Repository   : remi-modular
+Summary      : A module for PHP applications that use the SOAP protocol
+URL          : http://www.php.net/
+License      : PHP
+Description  : The php-soap package contains a dynamic shared object that will add
+             : support to PHP for using the SOAP web services protocol.
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Install the soap module.
+
+[root@localhost iamolo]# dnf install php-soap.x86_64
+Last metadata expiration check: 0:09:48 ago on Sun 22 Nov 2020 03:47:26 PM CAT.
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                        Architecture                                 Version                                                      Repository                                          Size
+===================================================================================================================================================================================================================
+Installing:
+ php-soap                                       x86_64                                       8.0.0~rc5-9.el8.remi                                         remi-modular                                       224 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 224 k
+Installed size: 632 k
+Is this ok [y/N]: y
+Downloading Packages:
+php-soap-8.0.0~rc5-9.el8.remi.x86_64.rpm                                                                                                                                            57 kB/s | 224 kB     00:03    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               29 kB/s | 224 kB     00:07     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : php-soap-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                      1/1 
+  Running scriptlet: php-soap-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                      1/1 
+  Verifying        : php-soap-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                      1/1 
+Installed products updated.
+
+Installed:
+  php-soap-8.0.0~rc5-9.el8.remi.x86_64                                                                                                                                                                             
+
+Complete!
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Re-check the installed modules, just a sanity check to ensure soap is installed.
+
+[root@localhost iamolo]# php --modules
+[PHP Modules]
+bz2
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gettext
+hash
+iconv
+json
+libxml
+mbstring
+openssl
+pcntl
+pcre
+PDO
+pdo_sqlite
+Phar
+readline
+Reflection
+session
+SimpleXML
+soap
+sockets
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zlib
+
+[Zend Modules]
+Zend OPcache
+
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+[root@localhost iamolo]#
+
+Checking php-fpm status.
+
+[root@localhost iamolo]# service php-fpm status
+Redirecting to /bin/systemctl status php-fpm.service
+● php-fpm.service - The PHP FastCGI Process Manager
+   Loaded: loaded (/usr/lib/systemd/system/php-fpm.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+[root@localhost iamolo]# 
+
+
+
+
+
+
+
