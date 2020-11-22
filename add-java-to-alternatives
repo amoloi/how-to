@@ -1,0 +1,18 @@
+# Adding Java to alternatives #
+================================
+
+This will apply to centos distro that uses alternatives and update-alternatives for managing java.
+
+  alternatives --install /usr/bin/java java /opt/kdk14/bin/java 2
+
+  alternatives --install /usr/bin/javac javac /opt/kdk14/bin/javac 2
+
+The above would add java to position two within alternatives. Position two is chosen because position 1 was already desgnated to java 8.
+
+  update-alternatives --config java
+
+and then choose position 2 to let centos use the version just installed.
+
+Check java version :
+
+  java -version
