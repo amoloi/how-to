@@ -1,0 +1,20 @@
+$ composer global require "laravel/installer"
+Changed current directory to /root/.composer
+Using version ^1.4 for laravel/installer
+./composer.json has been created
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - laravel/installer v1.4.1 requires ext-zip * -> the requested PHP extension zip is missing from your system.
+    - laravel/installer v1.4.0 requires ext-zip * -> the requested PHP extension zip is missing from your system.
+    - Installation request for laravel/installer ^1.4 -> satisfiable by laravel/installer[v1.4.0, v1.
+    
+  To enable extensions, verify that they are enabled in your .ini files:
+    - /etc/php.ini
+    - /etc/php.d/10-opcache.ini
+    
+    
+    
+$ dnf install php-zip -y
