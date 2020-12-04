@@ -1,0 +1,27 @@
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\DBAL\Logging\DebugStack;
+ 
+class SearchService
+{
+    private $entityManager;
+ 
+    public function __construct(
+        EntityManagerInterface $entityManager,
+    ) {
+        $this->entityManager = $entityManager;
+    }
+ 
+    public function search(ProductSearch\Criteria $criteria)
+    {
+        $connection = $this->entityManager->getConnection();
+        $stack = new DebugStack();
+        $connection->getConfiguration()->setSQLLogger($stack);
+ 
+        // Do whatever you do here
+        // All the queries run here will be logged
+ 
+        file_put_contents('/var/www/html/your/app/logs/sql.log', json_encode($stack), FILE_APPEND);
+ 
+        return $result;
+    }
+}
